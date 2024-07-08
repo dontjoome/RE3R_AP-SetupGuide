@@ -1,4 +1,4 @@
-# RE2R_AP_SetupGuide
-User-friendly setup guide for running the AP randomizer of RE2R.
+# RE3R_AP_SetupGuide
+User-friendly setup guide for running the AP randomizer of RE3R.
 
-To visit the Setup Guide, go to: https://fuzzygameson.github.io/RE2R_AP_SetupGuide/
+To visit the Setup Guide, go to: https://dontjoome.github.io/RE3R_AP_SetupGuide/
