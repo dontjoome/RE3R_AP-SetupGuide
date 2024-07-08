@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+    <head>
+        <title>RE2 Randomizer for Archipelago</title>
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+        
+        <link href="vendor/css/bootstrap-5.3.0.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="css/main.css" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
+        <script src="vendor/js/bootstrap-5.3.1.bundle.min.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <span class="red">R</span>esident <span class="red">E</span>vil 2: <span class="yellow">AP Randomizer</span>
+                        <span class="subtitle">Setup Guide</span>
+                    </a>
+                </div>
+            </nav>
+
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" id="link_clientmods" href="#clientmods">1. Game</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="link_yamloptions" href="#yamloptions">2. YAML Options</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="link_generation" href="#generation">3. Generate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="link_hosting" href="#hosting">4. Host</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="link_hosting" href="#connecting">5. Connect</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="link_datapackage" href="#datapackage">Datapackage</a>
+                </li>
+            </ul>
+
+            <div id="container">
+                <div id="clientmods" class="page active">
+                    <div class="panel panel-1">
+                        <div class="step-number">1</div>
+                        <div class="images">
+                            <img src="images/clientmods/re2r-switch-to-beta.png" />
+                        </div>
+                        <h4>Install the <strong>non-RTX</strong> version of the game on Steam.</h4>
+                        <ul>
+                            <li>Right-click RE2R on Steam, click "Properties",<br /> and do the steps in the picture to the right.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="panel panel-2">
+                        <div class="step-number">2</div>
+                        <div class="images">
+                            <img src="images/clientmods/reframework-non-rtx.jpg" />    
+                        </div>
+                        <h4>Install REFramework.</h4>
+                        <ul>
+                            <li>Download the "RE2_TDB66.zip" file in the <a href="https://github.com/praydog/REFramework/releases" target="_blank">most recent release here</a>.</li>
+                            <li>Extract the contents of that zip into your RE2R game install's folder.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="panel panel-3">
+                        <div class="step-number">3</div>
+                        <div class="images">
+                            <img src="images/clientmods/ap-client.jpg" />    
+                        </div>
+                        <h4>Install the AP client mods.</h4>
+                        <ul>
+                            <li>Download the "Source code (zip)" file in the <a href="https://github.com/FuzzyGamesOn/RE2R_AP_Client/releases" target="_blank">most recent release here</a>.</li>
+                            <li>Extract the contents of the "RE2R_AP_Client-x.x.x" folder in that zip into your RE2R game install's folder.</li>
+                            <li>(If it asks you to overwrite the "reframework" folder, choose Yes.)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="panel panel-4">
+                        <div class="step-number">4</div>
+                        <div class="images">
+                            <img src="images/clientmods/game-verify.jpg" />    
+                        </div>
+                        <h4>Verify that mods are installed.</h4>
+                        <ul>
+                            <li>Open your game normally and click through until you see the RE2R title screen.</li>
+                            <li>If you see both a "REFramework" and a couple of "Archipelago" windows in-game, the install worked!</li>
+                        </ul>
+                    </div>
+
+                    <div class="clear"><!-- x --></div>
+
+                    <button class="btn btn-success next-step" data-step="#yamloptions">Next Step: YAML Options</button>
+                </div>
+
+                <div id="yamloptions" class="page">
+                    <form id="form_yaml" onsubmit="return false;">
+                        <div class="form-group">
+                            <h4>Basic Options</h4>
+                            <div>
+                                <label for="player_name">Player Name:</label>
+                                <input name="player_name" placeholder="Your AP player name" />
+                            </div>
+                            <div>
+                                <label for="character">Character:</label>
+                                <select name="character">
+                                    <option value="leon">Leon</option>
+                                    <option value="claire">Claire</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="scenario">Scenario:</label>
+                                <select name="scenario">
+                                    <option value="a">Normal (A)</option>
+                                    <option value="b">2nd (B)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="difficulty">Difficulty:</label>
+                                <select name="difficulty">
+                                    <option value="Assisted" disabled>Assisted</option>
+                                    <option value="standard">Standard</option>
+                                    <option value="hardcore">Hardcore</option>
+                                </select>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="death_link" /> <label for="death_link">DeathLink</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <h4>Beneficial Extras</h4>
+                            <div>
+                                <label for="starting_hip_pouches">Starting Hip Pouches:</label>
+                                <select name="starting_hip_pouches">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="bonus_start" /> <label for="bonus_start">Bonus Start</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="extra_clock_tower_items" /> <label for="extra_clock_tower_items">Extra Clock Tower Items</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="extra_medallions" /> <label for="extra_medallions">Extra Medallions</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="allow_progression_in_labs" /> <label for="allow_progression_in_labs">Allow Progression in Labs</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <h4>Weapon Customization</h4>
+
+                            <div>
+                                <label for="cross_scenario_weapons">Cross Scenario Weapons:</label>
+                                <select name="cross_scenario_weapons">
+                                    <option value="none">None</option>
+                                    <option value="starting">Starting Only</option>
+                                    <option value="match">Match Level</option>
+                                    <option value="full">Full Random</option>
+                                    <option value="all">All Weapons</option>
+                                    <option value="full_ammo">Full + Ammo</option>
+                                    <option value="all_ammo">All + Ammo</option>
+                                    <option value="troll">Troll</option>
+                                </select>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="oops_all_rockets" /> <label for="oops_all_rockets">Oops! All Rockets</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="oops_all_grenades" /> <label for="oops_all_grenades">Oops! All Grenades</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="oops_all_knives" /> <label for="oops_all_knives">Oops! All Knives</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <h4>Item Removal Challenges</h4>
+
+                            <div class="form-check">
+                                <input type="checkbox" name="no_first_aid_spray" /> <label for="no_first_aid_spray">No First Aid Sprays</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="no_green_herb" /> <label for="no_green_herb">No Green Herbs</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="no_red_herb" /> <label for="no_red_herb">No Red Herbs</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="no_gunpowder" /> <label for="no_gunpowder">No Gunpowder</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <h4>Trap Options</h4>
+
+                            <div class="form-check">
+                                <input type="checkbox" name="add_damage_traps" /> <label for="add_damage_traps">Add Damage Traps</label>
+                            </div>
+                            <div class="form-subgroup">
+                                <div>
+                                    <label for="damage_trap_count">Damage Traps Total:</label>
+                                    <select name="damage_trap_count">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" name="damage_traps_can_kill" /> <label for="damage_traps_can_kill">Damage Traps Can Kill</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input type="checkbox" name="add_poison_traps" /> <label for="add_poison_traps">Add Poison Traps</label>
+                            </div>
+                            <div class="form-subgroup">
+                                <div>
+                                    <label for="poison_trap_count">Poison Traps Total:</label>
+                                    <select name="poison_trap_count">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="action-group">
+                            <button class="btn btn-primary" onclick="exportYAML()">Generate YAML</button><br />
+                            <button class="btn btn-success next-step" data-step="#generation">Next Step: Generate</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="generation" class="page">
+                    <div class="panel panel-1">
+                        <div class="step-number">1</div>
+                        <div class="images">
+                            <img src="images/generation/install-ap.jpg" />
+                        </div>
+                        <h4>Install Archipelago.</h4>
+                        <ul>
+                            <li>Download and install Archipelago from the <a href="https://github.com/ArchipelagoMW/Archipelago/releases" target="_blank">most recent release here</a>.</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-2">
+                        <div class="step-number">2</div>
+                        <div class="images">
+                            <img src="images/generation/install-apworld.jpg" /><br />
+                            <img src="images/generation/install-apworld-to-folder.jpg" />
+                        </div>
+                        <h4>Install the most recent APWorld.</h4>
+                        <ul>
+                            <li>Download the RE2R .apworld file from the<br /><a href="https://github.com/FuzzyGamesOn/RE2R_AP_World/releases" target="_blank">most recent release here</a>.</li>
+                            <li>Put that RE2R .apworld file in the<br />"custom_worlds" folder of your Archipelago<br />(AP) install.</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-3">
+                        <div class="step-number">3</div>
+                        <div class="images">
+                            <img src="images/generation/install-yaml.jpg" />
+                        </div>
+                        <h4>Place YAML in the Players folder.</h4>
+                        <ul>
+                            <li><em>If you haven't generated a YAML yet, go back to the "2. YAML Options" step.</em></li>
+                            <li>Place the YAML (that you generated in the "2. YAML Options" step) in the "Players" folder of your Archipelago (AP) install.</li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-4">
+                        <div class="step-number">4</div>
+                        <div class="images">
+                            <img src="images/generation/generate-ap.jpg" />
+                        </div>
+                        <h4>Generate your multiworld.</h4>
+                        <ul>
+                            <li><em>If you are participating in a multiworld that someone else is generating, you can skip this step.</em></li>
+                            <li>Double-click the "ArchipelagoGenerate.exe" in your Archipelago (AP) install to generate your multiworld.</li>
+                            <li>If generation succeeded, the console window will close on its own.</li>
+                        </ul>
+                    </div>
+
+                    <div class="clear"><!-- x --></div>
+
+                    <button class="btn btn-success next-step" data-step="#hosting">Next Step: Host</button>
+                </div>
+
+                <div id="hosting" class="page">
+                    <div class="panel panel-1">
+                        <div class="images">
+                            <img src="images/hosting/local-hosting.jpg" />
+                        </div>
+                        <h4>If playing solo, you can host locally.</h4>
+                        <ul>
+                            <li>Double-click the "ArchipelagoServer.exe" in your Archipelago (AP) install to host your solo multiworld.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="panel panel-2">
+                        <div class="images">
+                            <img src="images/hosting/website-hosting.jpg" />
+                        </div>
+                        <h4>Otherwise, host on the website.</h4>
+                        <ul>
+                            <li>Go to <a href="https://archipelago.gg/uploads" target="_blank">https://archipelago.gg/uploads</a> and click the "Upload File" button.</li>
+                            <li>Navigate to the "output" folder of your Archipelago (AP) install and choose the most recent AP_* zip file.</li>
+                            <li>(Optionally, click the "Download" link on this page to get the spoiler log for this multiworld.)</li>
+                            <li>Click the "Create New Room" link to start your multiworld room.</li>
+                        </ul>
+                    </div>
+
+                    <div class="clear"><!-- x --></div>
+
+                    <button class="btn btn-success next-step" data-step="#connecting">Next Step: Connect</button>
+                </div>
+
+                <div id="connecting" class="page">                 
+                    <div class="panel panel-1">
+                        <div class="step-number">1</div>
+                        <div class="images">
+                            <img src="images/connecting/client-window.jpg" />
+                        </div>
+                        <h4>Connect to the multiworld.</h4>
+                        <ul>
+                            <li><em>If you haven't installed the client mods for your game, go back to the "1. Game" step.</em></li>
+                            <li>In the "Archipelago Client for REFramework" window in your game, enter the connection details for your multiworld.</li>
+                            <li>"Host" will be the host that is shown in the console (hosting locally) or on the website (hosting there).</li>
+                            <li>"Slot" will be the player name that you configured in the "2. YAML Options" step.</li>
+                            <li>"Password" can be left empty, unless a password was configured for your generated multiworld. (This is usually not the case.)</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel panel-2">
+                        <div class="step-number">2</div>
+                        <div class="images">
+                            <img src="images/connecting/game-mod-scenario.jpg" />
+                        </div>
+                        <h4>Start playing!</h4>
+                        <ul>
+                            <li>Once you connect, the "Archipelago Game Mod" window in your game will display the Character, Scenario, and Difficulty that was generated with.</li>
+                            <li>Start the same character, scenario, and difficulty as you normally would.</li>
+                            <li>Enjoy!</li>
+                        </ul>
+                    </div>
+
+                    <div class="clear"><!-- x --></div>
+                </div>
+
+                <div id="datapackage" class="page">
+                    <h4>
+                        Datapackage for 
+                        <select name="datapackage_scenario">
+                            <option value="leon_a">Leon A</option>
+                            <option value="leon_b">Leon B</option>
+                            <option value="claire_a">Claire A</option>
+                            <option value="claire_b">Claire B</option>
+                        </select>
+                    </h4>
+
+                    <div class="panel panel-items"></div>
+                    <div class="panel panel-locations"></div>
+                </div>
+            </div>           
+        </div>
+
+        <div class="modal in" id="viewImg" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Viewing Image</h4>
+                        <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="imgViewer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="vendor/js/filesaver-1.3.8.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
