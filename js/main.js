@@ -129,13 +129,12 @@ function exportYAML() {
 
     fileContents += `${tab}starting_hip_pouches: ${form_data['starting_hip_pouches']}\n` +
         `${tab}bonus_start: ${form_data['bonus_start'] == 'on' ? true : false}\n` +
-        `${tab}extra_downtown_items: ${form_data['extra_clock_tower_items'] == 'on' ? true : false}\n` +
-        `${tab}extra_sewer_items: ${form_data['extra_medallions'] == 'on' ? true : false}\n` +
+        `${tab}extra_downtown_items: ${form_data['extra_downtown_items'] == 'on' ? true : false}\n` +
+        `${tab}extra_sewer_items: ${form_data['extra_sewer_items'] == 'on' ? true : false}\n` +
         `${tab}allow_progression_downtown: ${form_data['allow_progression_downtown'] == 'on' ? true : false}\n` +
         `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n`;
 
-    fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n` +
-        `${tab}oops_all_grenades: ${form_data['oops_all_grenades'] == 'on' ? true : false}\n`;
+    fileContents += `${tab}oops_all_grenades: ${form_data['oops_all_grenades'] == 'on' ? true : false}\n`;
 
     fileContents += `${tab}no_first_aid_spray: ${form_data['no_first_aid_spray'] == 'on' ? true : false}\n` +
         `${tab}no_green_herb: ${form_data['no_green_herb'] == 'on' ? true : false}\n` +
