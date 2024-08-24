@@ -22,25 +22,5 @@
         "name": "Cart 8",
         "region": "Operating Room",
         "remove": true
-    },
-    {
-        "name": "Weapon Crate 7",
-        "region": "Hospital Lobby",
-        "remove": true
-    },
-    {
-        "name": "Munitions 4",
-        "region": "Back Office",
-        "remove": true
-    },
-    {
-        "name": "Munitions 5",
-        "region": "Back Office",
-        "remove": true
-    },
-    {
-        "name": "Near Computers",
-        "region": "Laboratory Storage",
-        "remove": true
     }
 ]
