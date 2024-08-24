@@ -67,7 +67,7 @@ function loadDatapackage(character, scenario) {
     const location_nightmare_data = $.get(`data/${character}/${scenario}/locations_nightmare.json`).done(function (data) { return data; });
     const location_inferno_data = $.get(`data/${character}/${scenario}/locations_inferno.json`).done(function (data) { return data; });
 
-    Promise.all([item_data, location_data, location_hardcore_data]).then(
+    Promise.all([item_data, location_data, location_hardcore_data, location_nightmare_data, location_inferno_data]).then(
         function (combined_data) {
             const [items, locations, locations_hardcore, locations_nightmare, locations_inferno] = combined_data;
 
