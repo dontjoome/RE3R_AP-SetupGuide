@@ -64,10 +64,12 @@ function loadDatapackage(character, scenario) {
     const item_data = $.get(`data/${character}/items.json`).done(function (data) { return data; });
     const location_data = $.get(`data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
     const location_hardcore_data = $.get(`data/${character}/${scenario}/locations_hardcore.json`).done(function (data) { return data; });
+    const location_nightmare_data = $.get(`data/${character}/${scenario}/locations_nightmare.json`).done(function (data) { return data; });
+    const location_inferno_data = $.get(`data/${character}/${scenario}/locations_inferno.json`).done(function (data) { return data; });
 
     Promise.all([item_data, location_data, location_hardcore_data]).then(
         function (combined_data) {
-            const [items, locations, locations_hardcore] = combined_data;
+            const [items, locations, locations_hardcore, locations_nightmare, locations_inferno] = combined_data;
 
             const panel_items = $('#datapackage div.panel-items');
             const panel_locations = $('#datapackage div.panel-locations');
@@ -83,6 +85,10 @@ function loadDatapackage(character, scenario) {
             const list_locations = $('<ul />').appendTo(panel_locations);
             $('<h4 />').html('Hardcore Locations:').appendTo(panel_locations);
             const list_locations_hardcore = $('<ul />').appendTo(panel_locations);
+            $('<h4 />').html('Nightmare Locations:').appendTo(panel_locations);
+            const list_locations_nightmare = $('<ul />').appendTo(panel_locations);
+            $('<h4 />').html('Nightmare Locations:').appendTo(panel_locations);
+            const list_locations_inferno = $('<ul />').appendTo(panel_locations);
 
             items.forEach(function (item) {
                 const groups = ('groups' in item ? item['groups'] : null);
@@ -134,7 +140,8 @@ function exportYAML() {
         `${tab}allow_progression_downtown: ${form_data['allow_progression_downtown'] == 'on' ? true : false}\n` +
         `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n`;
 
-    fileContents += `${tab}oops_all_grenades: ${form_data['oops_all_grenades'] == 'on' ? true : false}\n`;
+    fileContents += `${tab}oops_all_grenades: ${form_data['oops_all_grenades'] == 'on' ? true : false}\n` +
+        `${tab}oops_all_grenades: ${form_data['oops_all_handguns'] == 'on' ? true : false}\n`;
 
     fileContents += `${tab}no_first_aid_spray: ${form_data['no_first_aid_spray'] == 'on' ? true : false}\n` +
         `${tab}no_green_herb: ${form_data['no_green_herb'] == 'on' ? true : false}\n` +
