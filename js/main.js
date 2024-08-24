@@ -103,6 +103,14 @@ function loadDatapackage(character, scenario) {
             locations_hardcore.forEach(function (location) {
                 $('<li />').html(`${location['region']}: ${location['name']}`).appendTo(list_locations_hardcore);
             });
+
+            locations_nightmare.forEach(function (location) {
+                $('<li />').html(`${location['region']}: ${location['name']}`).appendTo(list_locations_nightmare);
+            });
+ 
+            locations_inferno.forEach(function (location) {
+                $('<li />').html(`${location['region']}: ${location['name']}`).appendTo(list_locations_inferno);
+            });
         }
     );
 }
