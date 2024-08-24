@@ -87,7 +87,7 @@ function loadDatapackage(character, scenario) {
             const list_locations_hardcore = $('<ul />').appendTo(panel_locations);
             $('<h4 />').html('Nightmare Locations:').appendTo(panel_locations);
             const list_locations_nightmare = $('<ul />').appendTo(panel_locations);
-            $('<h4 />').html('Nightmare Locations:').appendTo(panel_locations);
+            $('<h4 />').html('Inferno Locations:').appendTo(panel_locations);
             const list_locations_inferno = $('<ul />').appendTo(panel_locations);
 
             items.forEach(function (item) {
