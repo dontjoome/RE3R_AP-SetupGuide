@@ -149,7 +149,7 @@ function exportYAML() {
         `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n`;
 
     fileContents += `${tab}oops_all_grenades: ${form_data['oops_all_grenades'] == 'on' ? true : false}\n` +
-        `${tab}oops_all_grenades: ${form_data['oops_all_handguns'] == 'on' ? true : false}\n`;
+        `${tab}oops_all_handguns: ${form_data['oops_all_handguns'] == 'on' ? true : false}\n`;
 
     fileContents += `${tab}no_first_aid_spray: ${form_data['no_first_aid_spray'] == 'on' ? true : false}\n` +
         `${tab}no_green_herb: ${form_data['no_green_herb'] == 'on' ? true : false}\n` +
