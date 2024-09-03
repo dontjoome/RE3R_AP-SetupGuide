@@ -143,7 +143,7 @@ function exportYAML() {
 
     fileContents += `${tab}starting_hip_pouches: ${form_data['starting_hip_pouches']}\n` +
         `${tab}bonus_start: ${form_data['bonus_start'] == 'on' ? true : false}\n` +
-        `${tab}extra_downtown_items: ${form_data['extra_downtown_items'] == 'on' ? true : false}\n` +
+        `${tab}early_fire_hose: ${form_data['early_fire_hose'] == 'on' ? true : false}\n` +
         `${tab}extra_sewer_items: ${form_data['extra_sewer_items'] == 'on' ? true : false}\n` +
         `${tab}allow_progression_downtown: ${form_data['allow_progression_downtown'] == 'on' ? true : false}\n` +
         `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n`;
